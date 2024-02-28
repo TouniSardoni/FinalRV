@@ -7,6 +7,7 @@ public class Caerse : MonoBehaviour
     
     public bool playerNear;
     public GameObject jugador;
+    public AudioSource SonidoCaerse;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class Caerse : MonoBehaviour
             jugador.transform.position = new Vector3(23f, 2f, 13f);
             jugador.SetActive(true);
             playerNear = false;
+            SonidoCaerse.Play();
         }
     }
 

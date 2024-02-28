@@ -10,6 +10,16 @@ public class PauseMenu : MonoBehaviour
 
     public KeyCode pauseButton;
 
+    public GameObject Estatica;
+
+    public AudioSource SonidoAbrir;
+
+    public AudioSource SonidoCerrar;
+
+    public void Cerrar () {
+        Estatica.SetActive(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +35,10 @@ public class PauseMenu : MonoBehaviour
             if(isPaused) 
             {
                 ResumeGame();
+                SonidoCerrar.Play();
             }
             else {
+                SonidoAbrir.Play();
                 PauseGame();
             }
         }
@@ -36,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.GetComponent<Canvas> ().enabled = true;
         isPaused = true;
+        Estatica.SetActive(true);
 
     }
 
@@ -43,5 +56,8 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.GetComponent<Canvas> ().enabled = false;
         isPaused = false;
+        Estatica.SetActive(false);
+        Estatica.SetActive(true);
+        Invoke("Cerrar", 0.1f);
     }
 }
