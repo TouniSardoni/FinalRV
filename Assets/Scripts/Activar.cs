@@ -16,10 +16,11 @@ public class Activar : MonoBehaviour
     bool Reproduciendo;
     public void DesbloquearPalanca() {Reproduciendo = false;}
     public AudioSource Chispas;
-    public void PararChispas() {Chispas.Stop(); LucesAbajo.SetActive(true); LucesArriba.SetActive(false);}
+    public void PararChispas() {Chispas.Stop(); ParticulasChispas.Stop(); LucesAbajo.SetActive(true); LucesArriba.SetActive(false);}
     public GameObject UI;
     public GameObject LucesArriba;
     public GameObject LucesAbajo;
+    public ParticleSystem ParticulasChispas;
 
     // Start is called before the first frame update
     void Start()
