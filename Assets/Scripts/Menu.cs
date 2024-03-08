@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     public void EmpezarNivel(string NombreNivel)
     {
-        SceneManager.LoadScene(NombreNivel);
+        SceneManager.LoadScene("PrimerNivel");
     }
 
     public void Salir()
