@@ -19,9 +19,10 @@ public class PlayerDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OrdenPlayer == 4) {
+        if (OrdenPlayer == 5) {
         Salida.SetActive(true);
         Invoke("SalidaS", 1.25f);
+        OrdenPlayer = 6;
         }
     }
 }

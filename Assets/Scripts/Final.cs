@@ -20,6 +20,7 @@ public class Final : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<PlayerDetector>()) SceneManager.LoadScene("Creditos");
+        if(other.GetComponent<PlayerDetector>()) SceneManager.UnloadSceneAsync("PrimerNivel");
         
     }
 }
